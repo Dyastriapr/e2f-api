@@ -7,12 +7,7 @@ const port = process.env.API_PORT || 5000;
 const db_mysql = require("./models");
 db_mysql.sequelize.sync();
 
-app.use(
-  cors({
-    origin: "*",
-    credentials: true,
-  })
-);
+app.use(cors());
 // Gunakan middleware CORS di seluruh aplikasi
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
