@@ -3,14 +3,15 @@ const express = require("express");
 const cors = require("cors"); // Import middleware CORS
 
 const app = express();
-const port = process.env.API_PORT;
+const port = process.env.API_PORT || 5000;
 const db_mysql = require("./models");
 db_mysql.sequelize.sync();
 
 app.use(
   cors({
-    origin: "http://localhost:3000",
+    origin: "*",
     credentials: true,
+    methods: ["GET", "POST", "PUT", "DELETE"],
   })
 );
 // Gunakan middleware CORS di seluruh aplikasi
@@ -41,3 +42,5 @@ app.use("/api/guru", guruRoute);
 app.listen(port, () => {
   console.log(`Server app listening on http://localhost:${port}`);
 });
+
+module.exports = app;
