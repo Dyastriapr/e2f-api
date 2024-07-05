@@ -15,7 +15,7 @@ db.sequelize.sync();
 
 // Middleware CORS
 const corsOptions = {
-  origin: "*",
+  origin: "https://e2-front-end.vercel.app",
   methods: ["GET", "POST", "PUT", "DELETE"],
   allowedHeaders: ["Content-Type", "Authorization"],
   credentials: true,
@@ -42,6 +42,7 @@ const nilaiRoute = require("./router/nilaiRoute");
 const tabunganRoute = require("./router/tabunganRoute");
 const tahunajarRoute = require("./router/tahunajarRoute");
 const guruRoute = require("./router/guruRoute");
+const guruRoute = require("./router/userRoute");
 
 app.use("/api/kelas", kelasRoute);
 app.use("/api/siswa", siswaRoute);
@@ -50,6 +51,7 @@ app.use("/api/nilai", nilaiRoute);
 app.use("/api/tabungan", tabunganRoute);
 app.use("/api/tahun-ajar", tahunajarRoute);
 app.use("/api/guru", guruRoute);
+app.use("/api/user", userRoute);
 
 // Menjalankan server Express
 app.listen(port, () => {
