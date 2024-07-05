@@ -11,7 +11,6 @@ app.use(
   cors({
     origin: "*",
     credentials: true,
-    methods: ["GET", "POST", "PUT", "DELETE"],
   })
 );
 // Gunakan middleware CORS di seluruh aplikasi
