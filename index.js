@@ -14,7 +14,12 @@ const port = process.env.API_PORT || 5000;
 db.sequelize.sync();
 
 // Middleware CORS
-app.use(cors());
+const corsOptions = {
+  origin: "*",
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  allowedHeaders: ["Content-Type", "Authorization"],
+};
+app.use(cors(corsOptions));
 
 // Middleware untuk parsing request body
 app.use(express.json());
