@@ -15,7 +15,7 @@ db.sequelize.sync();
 
 // Middleware CORS
 const corsOptions = {
-  origin: "https://e2-front-end.vercel.app",
+  origin: "*",
   methods: ["GET", "POST", "PUT", "DELETE"],
   allowedHeaders: ["Content-Type", "Authorization"],
   credentials: true,
